@@ -1,0 +1,56 @@
+variable "master_node_prefix" {
+    description = "Master node prefix."
+    default  = "master"
+}
+
+variable "master_node_count" {
+    description = "The number of master nodes."
+    default  = "3"
+}
+
+variable "master_node_cpu" {
+    description = "Worker node cpu's."
+    default  = "4"
+}
+
+variable "master_node_memory" {
+    description = "Worker node memory."
+    default  = "4096"
+}
+
+variable "master_node_disk" {
+    description = "Worker node disk size."
+    default  = "21474836480"
+}
+
+variable "worker_node_prefix" {
+    description = "Worker node prefix."
+    default  = "worker"
+}
+
+variable "worker_node_count" {
+    description = "The number of worker nodes."
+    default  = "3"
+}
+
+variable "worker_node_cpu" {
+    description = "Worker node cpu's."
+    default  = "4"
+}
+
+variable "worker_node_memory" {
+    description = "Worker node memory."
+    default  = "4096"
+}
+
+variable "worker_node_disk" {
+    description = "Worker node disk size."
+    default  = "21474836480"
+}
+
+
+variable "ssh_authorized_key" {
+    description = "SSH authorized key"
+    default  = "ssh-rsa AAAAB3Nz..."
+}
+
