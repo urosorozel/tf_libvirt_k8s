@@ -39,3 +39,4 @@ export ANSIBLE_TF_DIR=/home/uros/git/tf_libvirt_k8s
 ```
 virsh pool-define-as libvirt_pool dir - - - - "/libvirt_pool"
 ```
+` <domain name='local.net' localOnly='yes'/>`
