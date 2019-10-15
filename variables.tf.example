@@ -1,3 +1,28 @@
+variable "domain_name" {
+    description = "K8S hosts domain name"
+    default  = "k8s.local"
+}
+
+variable "master_ips" {
+    description = "IP"
+    default  = ["192.168.123.10","192.168.123.11","192.168.123.12"]
+}
+
+variable "k8s_network" {
+    description = "Subnet cidr for k8s hots"
+    default  = "192.168.123.0/24"
+}
+
+variable "storage_pool" {
+    description = "Storage pool path"
+    default  = "/libvirt_pool"
+}
+
+variable "storage_pool_name" {
+    description = "Storage pool name"
+    default  = "k8s_pool"
+}
+
 variable "qcow_image_filename" {
     description = "QCOW2 image filename."
     default  = "ubuntu-bionic.qcow2"
@@ -83,6 +108,35 @@ variable "etcd_node_disk" {
     default  = "21474836480"
 }
 
+variable "ceph_osd_node_prefix" {
+    description = "Worker node prefix."
+    default  = "ceph-osd"
+}
+
+variable "ceph_osd_node_count" {
+    description = "The number of ceph_osd nodes."
+    default  = "3"
+}
+
+variable "ceph_osd_node_cpu" {
+    description = "Worker node cpu's."
+    default  = "4"
+}
+
+variable "ceph_osd_node_memory" {
+    description = "Worker node memory."
+    default  = "4096"
+}
+
+variable "ceph_osd_node_disk" {
+    description = "Worker node disk size."
+    default  = "21474836480"
+}
+
+variable "ceph_osd_disks" {
+    description = "Ceph OSD disks."
+    default  = "3"
+}
 variable "ssh_authorized_key" {
     description = "SSH authorized key"
     default  = "ssh-rsa AAAAB3Nz..."

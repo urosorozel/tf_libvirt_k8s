@@ -40,3 +40,11 @@ export ANSIBLE_TF_DIR=/home/uros/git/tf_libvirt_k8s
 virsh pool-define-as libvirt_pool dir - - - - "/libvirt_pool"
 ```
 ` <domain name='local.net' localOnly='yes'/>`
+
+## Add static leases after provisioning
+```
+virsh net-dhcp-leases k8s-network|grep ipv4| sed -e 's/ \+/ /g' -e 's/^ //g'| cut -d ' ' -f3,5,6|xargs -l bash -c 'virsh net-update --network k8s-network add ip-dhcp-host --xml "<host mac=\"$0\" ip=\"${1///24}\" name=\"$2\"/>" --live --config'
+```
+
+# NVME in libvirt
+* https://frankenmichl.github.io/2018/02/13/add-nvme-device-to-vm/
